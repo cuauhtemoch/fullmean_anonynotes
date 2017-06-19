@@ -1,0 +1,25 @@
+
+
+
+<head><script src="https://cdnjs.cloudflare.com/ajax/libs/ng2-bootstrap/x.x.x/ng2-bootstrap.min.js"></script>
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"></head>
+
+
+<div class='container redBorder'>
+  <h1>Anonymous Notes</h1>
+  <form #form="ngForm" (submit)="onSubmit(note)">
+    <p>Note: <input type="text" name="note_form"
+    required
+    minlength="3"
+    [(ngModel)]="note.note"
+    #noteModel='ngModel'>
+    </p>
+    
+    
+    <input [disabled]="!form.valid" type="submit" value="Add note">
+  </form>
+<div class='noteList'>
+  <app-note-list></app-note-list>
+</div>
+</div>
+
